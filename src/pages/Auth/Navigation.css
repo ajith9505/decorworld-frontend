@@ -1,0 +1,125 @@
+#navigation-container {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4%;
+    height: 100vh;
+    padding: 65px 10px;
+    background-color: #fea49f;
+    position: fixed;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 100;
+    color: black;
+}
+
+#navigation-container:hover {
+    width: 15%;
+    padding: 65px 16px;
+}
+
+.nav-link {
+    transition-property: transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+    transform: translateX(0.5rem);
+}
+
+/* .nav-link svg {
+    font-weight: 900;
+} */
+
+.nav-item-name {
+    display: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out;
+    /* Add opacity transition */
+}
+
+#navigation-container:hover .nav-item-name {
+    display: block;
+    /* /* opacity: 1; */
+}
+
+.search-input {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    /* Add opacity transition */
+}
+
+#navigation-container:hover .search-input {
+    display: block;
+    opacity: 1;
+}
+
+#navigation-container:hover .search-icon {
+    display: none;
+    transition: opacity 0.2s ease-in-out;
+    /* Add opacity transition */
+}
+
+ul li{
+    list-style: none;
+}
+
+#login-btn,
+#register-btn {
+    margin-top: 20px;
+    transition-property: transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+#login-btn:hover,
+#register-btn:hover{
+    transform: translateX(0.5rem);
+}
+
+#login-btn svg{
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.nav-link:hover {
+    transform: translateX(0.5rem);
+}
+
+#username span{
+    color: #1f2937;
+}
+
+#username:focus{
+    outline: none;
+}
+
+#username svg{
+    height: 1rem;
+    width: 1rem;
+    margin-left: 4px;
+    /* background-color: #000; */
+    color: #1f2937;
+    outline: none;
+}
+
+#username svg.active{
+    transform: rotate(180deg);
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    #navigation-container {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #navigation-container {
+        display: none;
+    }
+}

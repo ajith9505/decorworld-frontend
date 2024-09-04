@@ -1,0 +1,237 @@
+
+.post .part-1{
+    background-image: url(https://www.shoppershaven.com.au/cdn/shop/files/27f00ea1-a2bc-459a-ba38-1f9a30743748.jpg?v=1720441853&width=516);  
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.part-1 .layer{
+    padding: 80px 210px 115px 210px;
+    color: #fff;
+    background-color: rgba(0 , 0, 0, 0.4);
+    text-align: center;
+}
+
+.part-1 .category h6{
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.part-1 .start-text h1{
+    font-size: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.part-1 .start-text p{
+    font-size: 73%;
+    font-style: inherit;
+    font-weight: 600;
+}
+
+.part-2 .sec-header {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.part-2 .sec-header h2{
+    font-size: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+.post .part-3{
+    background-image: linear-gradient(90deg, #00000000 0%, #000 100%), url(https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-02.jpg);  
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.part-3 .img-box{
+    flex-direction: column;
+    /* flex-wrap: initial; */
+    justify-content: end;
+    align-items: end;
+    flex-grow: 1;
+    padding: 80px 0px 80px 300px;
+    text-align: center;
+    /* height: 100%; */
+}
+
+.part-3 .img-box span{
+    width: 53%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.part-3 .img-box span h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.part-3 .img-box div{
+    margin-top: 15px;
+    width: 53%;
+}
+
+.part-3 .img-box div a{
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.part-3 .img-box div a:hover{
+    background: #fff;
+    color: #000;
+}
+
+.part-4 div.col{
+    padding: 50px 0px;
+}
+
+.part-4 span{
+    text-align: center;
+    padding: 0px 10px;
+    width: 20%;
+    max-width: 25%;
+}
+
+.part-4 span .icon-container{
+    padding: 20px;
+}
+
+.part-4 span .icon-container svg{
+    font-size: 1.5rem;
+}
+
+.part-4 span h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.part-4 span p{
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+.post .part-5{
+    background-image: linear-gradient(90deg, #00000000 0%, #000 100%), url(https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-005.jpg);  
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.part-5 .row{
+    align-items: center;
+    justify-content: end;
+}
+
+.part-5 .col{
+    text-align: start;
+    padding: 100px 0px;
+    width: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* flex-grow: initial; */
+}
+
+.part-5 .col h6{
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 8px;
+    letter-spacing: 2px;
+}
+
+.part-5 .col h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-style: italic;   
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 3.5rem;
+}
+
+.part-5 .col p{
+    font-size: 74%;
+    font-style: inherit;
+    font-weight: 600;
+}
+
+
+.link-btn a{
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.cart{
+    position: absolute;
+    right: -100%;
+    top: 0px;
+    /* left: 0px; */
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    /* color: #fff; */
+}
+
+.cart .container{
+    width: 30%;
+    margin-right: 0px;
+    background-color: #fff;
+    height: 100%;
+}
+
+.cart .container .col{
+    height: 100vh;
+}
+
+.cart-header{
+    position: relative  ;
+    padding: 20px;
+    height: 20%;
+    min-height: 20%;
+}
+
+.added-products{
+    text-align: center;
+    height: 60%;
+   align-content: center;
+}
+
+.cart-footer{
+    height: 20%;
+    align-content: center;
+    text-align: center;
+}
+
+.cart-footer a{
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px 50px;
+    font-weight: 600;
+}

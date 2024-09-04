@@ -1,0 +1,99 @@
+header{
+    width: 100%;
+    height: auto;
+    padding: 17px 25px;
+    background: #000;
+  }
+
+   header .header{
+    justify-content: space-between;
+    position: relative;
+   }
+
+   /* nav{
+    position: relative;
+    left: 5rem;
+   } */
+
+   .header .logo{
+    flex-direction: column;
+    color: #fff;
+   }
+  
+nav ul li a {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  /* text-transform: uppercase; */
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 25px;
+}
+
+nav ul li a:hover {
+  background: #f0faff;
+  color: #2bbef9;
+}
+
+/* header .logo{
+  position: relative;
+  right: 4.8rem;
+} */
+
+header .part3{
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  height: 45px;
+  width: 10rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #fff;
+  outline: none;
+}
+
+header .part3 svg{
+  font-size: 20px;
+}
+
+header .search-box input{
+  display: none;
+  /* background: transparent; */
+  outline: none;
+  font-size: 15px;
+  /* color: rgba(0, 0, 0, 0.8); */
+  width: 100%;
+  height: 40px;
+  border: 0px;
+  padding: 0px 20px;
+}
+
+
+.part3 .bag{
+  position: relative;
+}
+
+/* .part3{
+  position: relative;
+  right: 5rem;
+} */
+ 
+.part3 .count{
+  position: absolute;
+  text-align: center;
+  top: -6px;
+  right: -6px;
+  width: 14px;
+  height: 14px;
+  background: #dccf23;
+  border-radius: 50%;
+  color: #000;
+  font-size: 10px;
+  font-weight: 600;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}

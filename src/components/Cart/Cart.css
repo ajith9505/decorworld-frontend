@@ -1,0 +1,54 @@
+.table-header, .table-content{
+    display: flex;
+    padding: 20px 0px;
+}
+
+.table-header div, .table-content div{
+    width: 20%;
+    padding: 0px 20px;
+    align-content: center;
+}
+
+.table-content .cart-product{
+    overflow: hidden;
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.heading{
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.cart-total-container{
+    width: 40%;
+    height: 15rem;
+    border: 1px solid #000;
+    padding: 20px;
+}
+
+.total-heading h2{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+}
+
+.checkout-btn{
+    text-align: center;
+}
+
+.checkout-btn button{
+    padding: 15px 30px;
+    border-radius: 7px;
+    background-color: gray;
+}

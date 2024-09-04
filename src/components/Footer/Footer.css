@@ -1,0 +1,35 @@
+#footer{
+    background-color: #f6f6f6;
+    background-image: none;
+    width: 100%;
+}
+
+.site-footer-primary {
+    padding: 60px 24px 60px 24px;
+}
+
+.site-footer-primary h2{
+    font-family: 'Cormorant Garamond', serif;
+    padding-left: 32px;
+    font-size: 18px;
+}
+
+.site-footer-primary ul li{
+    list-style: none;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+.secondary-footer{
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid;
+    border-top-color: rgba(0, 0, 0, 0.14);
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 30px;
+}
+

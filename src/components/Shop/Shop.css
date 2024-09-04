@@ -1,0 +1,103 @@
+.entry-banner {
+    background-image: linear-gradient(to right, rgb(0 0 0 / 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/shopbanner.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    justify-content: center;
+    padding: 216px 24px 216px 24px;
+}
+
+.entry-banner .container {
+    text-align: center;
+    color: #fff;
+    /* padding: 10rem; */
+}
+
+.entry-banner .container h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 5.3rem;
+}
+
+.inner-content ul {
+    justify-content: center;
+    padding: 0px;
+}
+
+.inner-content ul li {
+    list-style: none;
+    margin: 5px;
+    font-size: 13px;
+}
+
+.inner-content ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.inner-content ul li a:hover {
+    color: rgb(5, 5, 255);
+}
+
+.card{
+    border: none;
+}
+
+.product{
+    position: relative;
+    left: 2.5rem;
+}
+
+.card-body span {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.card-body .card-text{
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+.card-body a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+ }
+
+.card-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.card-body button{
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 15px;
+    background-color: #642f64;
+    padding: 5px 10px;
+}
+
+.original-price{
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 0px;
+    font-weight: 600;
+}
+
+.original-price::after{
+    display: block;
+    content: '';
+    height: 2px;
+    width: 25%;
+    background: #000;
+    position: relative;
+    left: 65px;
+    bottom: 9px;
+}
