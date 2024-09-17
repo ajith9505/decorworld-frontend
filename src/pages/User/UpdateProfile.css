@@ -1,0 +1,45 @@
+#update-profile-section {
+    padding: 16px;
+    margin: 10rem auto 0 auto;
+}
+
+#update-profile-container #content h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#update-profile-container #content .input-container {
+    margin-bottom: 16px;
+}
+
+#update-profile-container #content #submit-btn {
+    background-color: rgb(43, 140, 250);
+    padding: 8px 16px;
+    margin: 16px 0px;
+}
+
+#update-profile-container #content #submit-btn:hover {
+    background-color: rgb(2, 85, 179);
+}
+
+#update-profile-container #content a {
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+#update-profile-container #content a:hover{
+    color: rgb(2, 85, 179);
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    #update-profile-container {
+        margin-left: 16px;
+    }
+
+    #update-profile-container #content {
+        width: 33%;
+    }
+}

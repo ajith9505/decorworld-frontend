@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../../components/Loader';
 import { useLoginMutation } from '../../api/userApiSlice';
 import { setCredentials } from '../../api/authSlice';
+import { jwtDecode } from 'jwt-decode';
 import { toast } from 'react-toastify'
-import image from '../../assets/image/login-img.jpg'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,24 +17,24 @@ const Login = () => {
 
   const [login, { isLoading }] = useLoginMutation();
 
-  const { userInfo } = useSelector((state) => state.auth.user);
+  const { user } = useSelector((state) => state.auth);
 
-  // const { search } = useLocation();
-  // const sp = new URLSearchParams(search);
-  // const redirect = sp.get('redirect') || '/';
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get('redirect') || '/';
 
   // useEffect(() => {
-  //   if (userInfo) {
+  //   if (user) {
   //     navigate(redirect);
   //   }
-  // }, [navigate, redirect, userInfo]);
+  // }, [navigate, redirect, user]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await login({ email, password }).unwrap();
-      console.log(res);
-      dispatch(setCredentials({ ...res }));
+      const { token } = await login({ email, password }).unwrap();
+      localStorage.setItem('token', token)
+      dispatch(setCredentials({ ...jwtDecode(token).user }))
       navigate(redirect);
     } catch (err) {
       toast.error(err?.data?.message || err.error);

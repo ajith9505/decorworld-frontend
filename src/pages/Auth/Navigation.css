@@ -4,12 +4,60 @@
     width: 4%;
     height: 100vh;
     padding: 65px 10px;
-    background-color: #fea49f;
+    background-color: #a39c9b;
     position: fixed;
     transition: width 0.3s ease-in-out;
     overflow: hidden;
     z-index: 100;
     color: black;
+}
+
+#navigation-container #user #user-icon {
+    font-size: 2rem;
+    padding-right: 5px;
+}
+
+#navigation-container #user  {
+    display: none;
+    padding: 0px 10px;
+    /* overflow: hidden; */
+    width: 70%;
+}
+
+#navigation-container #user svg{
+    transform: translateX(0);
+    transition: transform 0.1s ease-in-out;
+    display: inline-block;
+}
+
+#navigation-container #user svg.active{
+    transform: rotate(270deg);
+}
+
+#navigation-container #user span {
+    display: none;
+    word-break: keep-all;
+    width: 300px;
+}
+
+#navigation-container #user li  a{
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black
+}
+
+#navigation-container #user li a:hover,
+#navigation-container #user li button:hover {
+    background-color: #dfdfe0;
+}
+
+#navigation-container #user button{
+    display: none;
+    width: 100%;
+    padding: 8px 16px;
+    border: 0px;
+    text-align: left;
 }
 
 #navigation-container:hover {
@@ -40,7 +88,9 @@
     /* Add opacity transition */
 }
 
-#navigation-container:hover .nav-item-name {
+#navigation-container:hover .nav-item-name,
+#navigation-container:hover #user button,
+#navigation-container:hover #user span {
     display: block;
     /* /* opacity: 1; */
 }
@@ -89,27 +139,6 @@ ul li{
 
 .nav-link:hover {
     transform: translateX(0.5rem);
-}
-
-#username span{
-    color: #1f2937;
-}
-
-#username:focus{
-    outline: none;
-}
-
-#username svg{
-    height: 1rem;
-    width: 1rem;
-    margin-left: 4px;
-    /* background-color: #000; */
-    color: #1f2937;
-    outline: none;
-}
-
-#username svg.active{
-    transform: rotate(180deg);
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
