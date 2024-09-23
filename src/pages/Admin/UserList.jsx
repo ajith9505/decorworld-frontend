@@ -27,6 +27,7 @@ const UserList = () => {
         await deleteUser(id);
         refetch();
       } catch (err) {
+        console.log(err);
         toast.error(err?.data?.message || err.error);
       }
     }
@@ -46,7 +47,7 @@ const UserList = () => {
         email: editUserEmail,
       });
       console.log(id, editUserName, editUserEmail);
-      
+
       setEditUserId(null);
       refetch();
     } catch (err) {
@@ -106,12 +107,6 @@ const UserList = () => {
                               onChange={(e) => setEditUserEmail(e.target.value)}
                               className="w-full p-2 border rounded-lg"
                             />
-                            <button
-                              onClick={() => updateHandler(user._id)}
-                              className="ms-2 bg-primary py-2 px-4 rounded"
-                            >
-                              <FaCheck />
-                            </button>
                           </div>
                         ) : (
                           <div className="d-flex align-items-center justify-content-between">
@@ -140,7 +135,7 @@ const UserList = () => {
                             <button
                               className="m-2 px-4 py-2 text-white rounded bg-primary"
                               onClick={() =>
-                                toggleEdit(user._id, user.name, user.email)
+                                toggleEdit(user._id, user.username, user.email)
                               }
                             >
                               <FaEdit className=" " />
