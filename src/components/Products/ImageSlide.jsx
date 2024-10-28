@@ -19,7 +19,7 @@ const ImageSlide = () => {
         centerPadding: '0px'
     };
 
-    const images = useSelector(state => state.product.data[0].imgLink)
+    const images = useSelector(state => state.product.data[0].image)
 
     return (
         <>

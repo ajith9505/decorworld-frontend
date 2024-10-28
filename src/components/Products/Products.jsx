@@ -1,28 +1,36 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { useGetProductByIdQuery } from '../../api/productApiSlice';
 import './Products.css'
 import ImageSlide from './ImageSlide';
 
 const Products = () => {
+  const { id } = useParams();
+  const { data: product, isLoading, refetch, error } = useGetProductByIdQuery(id);
+  
+  if(isLoading) return <div>Loading...</div>
 
   return (
     <>
-      <div className="product-container my-5">
+      <div className="product-container py-5">
         <div className="container">
-          <ImageSlide />
+          <img src={product?.image} alt={product?.name} style={{
+            height: '30rem ',
+            marginLeft: '2rem'
+          }}/>
+          {/* <ImageSlide /> */}
           <div className="product-details">
             <div className="product-head">
-              <div className="product-title">
-                Hummingbird Art Print | Floral Bird Art | Digital Download | Nature Wall Decor | Hummingbird Wall Art | Instant Download | 4
-              </div>
+              <div className="product-title">{product.name}</div>
               <div className="price-details">
                 <div className="discount-details">
-                  <span className="without-offer-price">$9.99</span>
-                  <span className="discount-percent">-31%</span>
+                  <span className="without-offer-price">{`${Math.ceil(product.price / 100 * 10 + product.price)} Rs`}</span>
+                  <span className="discount-percent">-10%</span>
                 </div>
                 <div className="current-price-details">
                   <div className="current-price">
-                    <h3>$6.99</h3>
+                    <h3>{product.price}</h3>
                   </div>
                 </div>
               </div>

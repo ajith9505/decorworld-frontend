@@ -1,10 +1,12 @@
-.product-container .container {
-  display: flex;
-  justify-content: space-between;
+.product-container {
+  background-color: #cdcbcb;
+  width: 100%;
 }
 
 .product-container .container {
-  padding: px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-gallery {
@@ -27,6 +29,11 @@
   max-width: 100%;
   height: 80vh;
   margin: auto;
+}
+
+.product-details{
+  margin-left: 100px;
+  background-color: #cdcbcb;
 }
 
 .product-title {

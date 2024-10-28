@@ -1,0 +1,142 @@
+/* menu */
+
+.dash-menu-btn{
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    border: 0px;
+    padding: 8px;
+    z-index: 100;
+}
+.dash-menu-btn.active {
+    background-color: #151515;
+    color: white;
+}
+.dash-section {
+    position: fixed;
+    right: 28px;
+    top: 20px;
+    padding: 1rem;
+    background-color: #151515;
+    transition: ease-in-out 0.5s;
+}
+
+.dash-list{
+    list-style: none;
+    margin-top: 8px;
+}
+
+.dash-list .list-item{
+    text-decoration: none;
+    padding: 12px 8px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.dash-list .list-item:hover {
+    background-color: #2e2d2d;
+  }
+
+/* userlist */
+
+.userList-container {
+    padding: 16px 60px;
+    min-height: 100vh;
+}
+
+.table-container {
+    padding-top: 30px;
+}
+
+.table-container table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-container table th {
+    padding: 8px 6px;
+    text-align: left;
+}
+
+.table-container table tbody td {
+    padding: 8px 6px;
+}
+
+@media (min-width: 768px) {
+    .table-container {
+        flex-direction: row;
+    }
+
+    .table-container table {
+        width: 80%;
+    }
+}
+
+/* create product */
+
+.productpage {
+    background-color: rgb(204, 210, 246);
+}
+
+.product-form .header {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.input{
+    width: 100%;
+}
+
+.input label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input input, .input textarea {
+    background-color: #87878a;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    width: 100%;
+}
+
+.input textarea {
+    height: 5rem;
+}
+
+.submit-btn button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: cadetblue;
+}
+
+.submit-btn button:hover {
+    background-color: rgb(66, 161, 164);
+}
+
+@media (min-width: 1280px) {
+    .productpage {
+        margin: 0rem 9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .product-form {
+        width: 75%;
+    }
+}
+
+/* product list */
+
+.product-table th {
+    border: 2px solid black;
+}
+
+.product-table td{
+    border: 2px solid black;
+}

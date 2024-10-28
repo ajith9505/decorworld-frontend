@@ -1,7 +1,7 @@
 
 .post .part-1{
-    background-image: url(https://www.shoppershaven.com.au/cdn/shop/files/27f00ea1-a2bc-459a-ba38-1f9a30743748.jpg?v=1720441853&width=516);  
-    /* background-position: center center; */
+    background-image: url(homepage/home1.jpg);  
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

@@ -1,17 +1,19 @@
 import React from 'react'
 import './Home.css'
-// import Product from '../Shop/Product'
+import Product from '../Shop/Product'
 import { Link } from 'react-router-dom'
 import { FaLock } from "react-icons/fa6";
 import { FaTruckFast } from "react-icons/fa6";
 import { TbReload } from "react-icons/tb";
 import { RiMapPin2Line } from "react-icons/ri";
 import CartPopup from './CartPopup';
+import SearchBox from '../SearchBox';
 
 const Home = () => {
   return (
     <>
       <div className="content">
+      <SearchBox />
         <article className='post'>
           <div className='part-1'>
             <div className="layer">
@@ -123,7 +125,6 @@ const Home = () => {
           </div>
         </article>
       </div>
-      <CartPopup />
     </>
   )
 }

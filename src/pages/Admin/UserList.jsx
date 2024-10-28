@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import './UserList.css'
 import { FaTrash, FaEdit, FaCheck, FaTimes } from "react-icons/fa";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";

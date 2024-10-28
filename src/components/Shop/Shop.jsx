@@ -8,48 +8,20 @@ import { setProduct } from './productSlice'
 import { Link } from 'react-router-dom'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Loading from '../Loading/Loading'
+import { useGetAllProductsQuery } from '../../api/productApiSlice'
+import { FaBars } from 'react-icons/fa'
  
 const Shop = () => {
 
-  const [loading, setLoading] = useState(true);
+  const { data: products, isLoading } = useGetAllProductsQuery();
 
-  const dispatch = useDispatch()
+  console.log(products)
 
-  // const loading = useSelector(state => state.loading.data)
-  const product = useSelector(state => state.product.data)
-
-  const getProduct = async () => {
-
-    try {
-
-      await axios({
-        url: '/product',
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-      }).then(response => {
-        dispatch(setProduct({ data: response.data.product }))
-      })
-    } catch (error) {
-      console.log(error);
-    }
-    finally {
-      setLoading(false)
-      // dispatch(setLoading({ data: false }))
-    }
-
-    // console.log(product);
-  }
-
-  useEffect(() => {
-
-    getProduct()
-
-  }, [])
-
-  if (loading) return <Loading />
+  if (isLoading) return <Loading />
 
   return (
     <>
+    <div className='shop-page d-flex flex-column'>
       <section className='entry-banner'>
         <div className="container">
           <h1>Shop</h1>
@@ -67,7 +39,7 @@ const Shop = () => {
       <main id="main" className="site-main">
         <div className="content-container px-5">
           <div className="d-flex align-items-center justify-content-between py-5">
-            <p className="result-count">Showing all 8 results</p>
+            <p className="result-count">Showing all {products.length} results</p>
             <form method='get'>
               <select name="oderby" id="oderby" className="oderby">
                 <option value='menu-order'>Default sorting</option>
@@ -79,19 +51,15 @@ const Shop = () => {
             </form>
           </div>
           <div className="product-container">
-            <div className="product row  gx-4 gx-lg-5 row-cols-sm-1 row-cols-md-5 row-cols-xl-3">
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
-              <Product product={product} />
+            <div className="product row gx-4 gx-lg-5 row-cols-sm-1 row-cols-md-5 row-cols-xl-3">
+              {products.map(product => (<Product key={product._id} product={product}/>))}
             </div>
           </div>
         </div>
+        <div>
+        </div>
       </main>
+      </div>
     </>
   )
 }

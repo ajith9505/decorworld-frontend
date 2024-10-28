@@ -17,12 +17,16 @@ import RequireAuth from './pages/Auth/RequireAuth'
 import UpdateProfile from './pages/User/UpdateProfile'
 import AdminRoute from './pages/Admin/AdminRoute'
 import UserList from './pages/Admin/UserList'
+import AdminDashboard from './pages/Admin/AdminDashboard'
+import ProductPage from './pages/Admin/ProductPage'
+import ProductList from './pages/Admin/ProductList'
 
 
 function App() {
 
   return (
     <Router>
+       <ScrollToTop />
       <Routes>
 
         <Route path='*' element={<Navigate to="/" />} />
@@ -37,7 +41,6 @@ function App() {
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/products/:id' element={<Products />} />
-          <Route path='/admin-dashbord' element={<Admin />} />
 
           {/* protected routes */}
 
@@ -49,6 +52,9 @@ function App() {
 
           <Route path='/admin' element={<AdminRoute />}>
             <Route path='/admin/userlist' element={<UserList />} />
+            <Route path='/admin/dashboard' element={<AdminDashboard />} />
+            <Route path='/admin/product' element={<ProductPage />} />
+            <Route path='/admin/productlist' element={<ProductList />} />
           </Route>
 
         </Route>
@@ -58,7 +64,3 @@ function App() {
 }
 
 export default App
-
-// git remote add origin https://github.com/ajith9505/onlineStore-frontend.git
-// git branch -M main
-// git push -u origin main

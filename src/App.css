@@ -66,3 +66,22 @@ body{
   }
 }
 
+.nav-toggle {
+  display: none;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+  }
+
+  .nav-toggle.active{
+    left: 210px;
+  }
+ }
+
