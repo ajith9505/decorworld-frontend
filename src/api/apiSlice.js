@@ -1,7 +1,7 @@
 import { fetchBaseQuery, createApi } from '@reduxjs/toolkit/query/react'
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://localhost:3500',
+  baseUrl: 'https://decorworld-api.onrender.com',
    credentials: "include",
    prepareHeaders: (headers) => {
     const token = localStorage.getItem('token')
