@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="container">
                         <div className="row">
                             <div className="footer-copyright">
-                                <p>Copyright © 2024 Clothing Store | Powered by Clothing Store</p>
+                                <p>Copyright © 2024 Decor World | Powered by Decor World</p>
                             </div>
                         </div>
                     </div>

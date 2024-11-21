@@ -10,7 +10,8 @@ export const productApiSlice = apiSlice.injectEndpoints({
             query: (data) => ({
                 url: '/product',
                 method: 'POST',
-                body: data
+                body: data,
+                responseHandler: (data) => console.log(data)
             }),
             invalidatesTags: ["Product"]
         }),

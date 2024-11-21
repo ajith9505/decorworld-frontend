@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Shop.css'
 import Product from './Product'
-import axios from '../../api/axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { setProduct } from './productSlice'
-// import { setLoading } from '../Loading/loadingSlice'
 import { Link } from 'react-router-dom'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Loading from '../Loading/Loading'

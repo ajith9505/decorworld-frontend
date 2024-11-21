@@ -2,15 +2,15 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useState } from "react";
-import Admin from "../../pages/Admin/Admin";
 import Navigation from "../../pages/Auth/Navigation";
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
+import { BiMessageRoundedDetail } from "react-icons/bi";
+
 
 const Layout = () => {
-    const [admin, setAdmin] = useState(true);
     const [showSidebar, setShowSidebar] = useState(false);
 
 

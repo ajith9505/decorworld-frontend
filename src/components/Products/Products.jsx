@@ -25,12 +25,12 @@ const Products = () => {
               <div className="product-title">{product.name}</div>
               <div className="price-details">
                 <div className="discount-details">
-                  <span className="without-offer-price">{`${Math.ceil(product.price / 100 * 10 + product.price)} Rs`}</span>
+                  <span className="without-offer-price">{`₹ ${Math.ceil(product.price / 100 * 10 + product.price)}`}</span>
                   <span className="discount-percent">-10%</span>
                 </div>
                 <div className="current-price-details">
                   <div className="current-price">
-                    <h3>{product.price}</h3>
+                    <h3>₹ {product.price}</h3>
                   </div>
                 </div>
               </div>

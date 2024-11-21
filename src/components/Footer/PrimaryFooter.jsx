@@ -27,10 +27,10 @@ const PrimaryFooter = () => {
                             <h2 className="title">Categories</h2>
                             <nav className="menu-container">
                                 <ul className="menu">
-                                    <li className="menu-item">Casual</li>
-                                    <li className="menu-item">Work & Office</li>
-                                    <li className="menu-item">Activewear</li>
-                                    <li className="menu-item">Evening Dresses</li>
+                                    <li className="menu-item">Art</li>
+                                    <li className="menu-item">Interior</li>
+                                    <li className="menu-item">Furniture</li>
+                                    <li className="menu-item">Wall</li>
                                 </ul>
                             </nav>
                         </section>
