@@ -132,8 +132,8 @@ ul li a{
     }
 
     .nav-toggle {
-        /* position: absolute; */
-        /* left: 500px; */
+        position: absolute; 
+        left: 500px;
     }
 
     .user-name{
