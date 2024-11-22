@@ -6,7 +6,7 @@ const SearchBox = () => {
     <div className='d-flex'
         style={{
             padding:'20px',
-            backgroundColor: 'rgba(0,0,0,0.5)',
+            backgroundColor: 'rgba(0,0,0,0.2)',
             justifyContent: 'center'
             }}>
         <div>

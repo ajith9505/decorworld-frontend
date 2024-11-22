@@ -166,3 +166,22 @@
   border: none;
   background-color: rgb(196, 104, 216);
 }
+
+@media screen and (max-width: 767px) {
+  .product-container .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-container .container .img img {
+    width: 350px;
+    height: 350px !important;
+    margin-left: 0px !important;
+    margin-bottom: 10px;
+  }
+
+  .product-details {
+    margin: 0px;
+  }
+
+}

@@ -8,18 +8,20 @@ import ImageSlide from './ImageSlide';
 const Products = () => {
   const { id } = useParams();
   const { data: product, isLoading, refetch, error } = useGetProductByIdQuery(id);
-  
-  if(isLoading) return <div>Loading...</div>
+
+  if (isLoading) return <div>Loading...</div>
 
   return (
     <>
       <div className="product-container py-5">
         <div className="container">
-          <img src={product?.image} alt={product?.name} style={{
-            height: '30rem ',
-            marginLeft: '2rem'
-          }}/>
-          {/* <ImageSlide /> */}
+          <div className='img'>
+            <img src={product?.image} alt={product?.name} style={{
+              height: '30rem ',
+              marginLeft: '2rem'
+            }} />
+            {/* <ImageSlide /> */}
+          </div>
           <div className="product-details">
             <div className="product-head">
               <div className="product-title">{product.name}</div>

@@ -11,8 +11,6 @@ const Shop = () => {
 
   const { data: products, isLoading } = useGetAllProductsQuery();
 
-  console.log(products)
-
   if (isLoading) return <Loading />
 
   return (

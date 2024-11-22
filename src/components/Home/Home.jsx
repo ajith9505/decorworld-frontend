@@ -7,24 +7,17 @@ import { FaTruckFast } from "react-icons/fa6";
 import { TbReload } from "react-icons/tb";
 import { RiMapPin2Line } from "react-icons/ri";
 import CartPopup from './CartPopup';
-import SearchBox from '../SearchBox';
 import { useGetAllProductsQuery } from '../../api/productApiSlice';
 import Loading from '../Loading/Loading';
 
 const Home = () => {
 
-  const { data, error, isLoading } = useGetAllProductsQuery();
-  console.log('Products:', data);
+  const { data, isLoading } = useGetAllProductsQuery();
   const homeProducts = data;
-
-  if (isLoading) return <Loading />
-  if (error) console.log(error);
-
 
   return (
     <>
       <div className="content w-100">
-        <SearchBox />
         <article className='post'>
           <div className='part-1'>
             <div className="layer">
@@ -47,7 +40,7 @@ const Home = () => {
             <div className="products">
               <div className="container">
                 <div className="row gx-4 gx-lg-6 row-cols-sm-1 row-cols-md-6 row-cols-xl-3 d-flex justify-content-center">
-                  {
+                  {isLoading ? <Loading /> :
                     homeProducts.map((product) => (
                       <Product key={product._id} product={product} />
                     ))
@@ -59,7 +52,7 @@ const Home = () => {
           <div className="part-3">
             <div className="container h-auto">
               <div className="img-box d-flex justify-content-center">
-                <img width='350' height='450' src={'./homepage/home3.jpg'} alt="loading..." />
+                <img width='200' height='250' src={'./homepage/home3.jpg'} alt="loading..." />
                 <span>
                   <h3>Explore Our Exquisite Art Collection Now!</h3>
                 </span>
@@ -117,24 +110,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <div className="part-5">
-            <div className="container">
-              <div className="row">
-                <div className="col">
-                  <div><h6>EXPLORE</h6></div>
-                  <div>
-                    <h2>Elevate your wardrobe, embrace timeless style!</h2>
-                    <p>
-                      Explore our collections today and experience the joy of fashion. Shop now for the epitome of chic sophistication!
-                    </p>
-                  </div>
-                  <div className="link-btn">
-                    <Link to='/shop'>SHOP NOW</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </article>
       </div>
     </>
