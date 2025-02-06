@@ -8,7 +8,7 @@ import { TbReload } from "react-icons/tb";
 import { RiMapPin2Line } from "react-icons/ri";
 import CartPopup from './CartPopup';
 import { useGetAllProductsQuery } from '../../api/productApiSlice';
-import Loading from '../Loading/Loading';
+import Loader from '../Loader';
 
 const Home = () => {
 
@@ -40,7 +40,7 @@ const Home = () => {
             <div className="products">
               <div className="container">
                 <div className="row gx-4 gx-lg-6 row-cols-sm-1 row-cols-md-6 row-cols-xl-3 d-flex justify-content-center">
-                  {isLoading ? <Loading /> :
+                  {isLoading ? <Loader /> :
                     homeProducts.map((product) => (
                       <Product key={product._id} product={product} />
                     ))

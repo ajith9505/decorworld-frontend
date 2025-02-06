@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-import { setCart } from "../Cart/cartSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { addToCart } from "../Cart/cartSlice"
 import { Link, useNavigate, generatePath } from "react-router-dom"
 
 const Product = ({ product }) => {
@@ -19,7 +19,9 @@ const Product = ({ product }) => {
 
     const dispatch = useDispatch()
 
-    const link = product?.image
+    const addCart = () => {
+        dispatch(addToCart( { data : { id: id, productName: product.name, price: product.price, img: product?.image, qty:1  }}));        
+    }
 
     return (
         <>
@@ -37,7 +39,7 @@ const Product = ({ product }) => {
                     </div>
                     <p className="card-text">{`${product.price} Rs`}</p>
 
-                    <button onClick={() => dispatch(setCart({ data: [{ productName: product.name, price: product.price }] }))}>Add To Cart</button>
+                    <button onClick={addCart}>Add To Cart</button>
                 </div>
             </div>
         </>

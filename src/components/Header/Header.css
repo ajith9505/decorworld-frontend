@@ -1,38 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-header{
-    width: 100%;
-    height: auto;
-    padding: 17px 25px;
-    background: #000;
-  }
+header {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  height: auto;
+  padding: 17px 25px;
+  background: #000;
+  z-index: 100;
+}
 
-   header .header{
-    justify-content: space-between;
-    position: relative;
-   }
+header .header {
+  justify-content: space-around;
+  align-items: center;
+}
 
-   /* nav{
-    position: relative;
-    left: 5rem;
-   } */
+nav {
+  position: relative;
+  width: 50%;
+}
 
-   .header .logo{
-    flex-direction: column;
-    color: #fff;
-   }
+.logo {
+  flex-direction: column;
+  color: #fff;
+}
 
-   .header .logo div{
-    font-family: "Lora", serif;
-    font-size: 1.5rem;
-   }
-  
-nav ul li a {
+.logo div {
+  font-family: "Lora", serif;
+  font-size: 1.5rem;
+}
+
+nav ul li a,
+header a {
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
   color: #fff;
-  /* text-transform: uppercase; */
   display: flex;
   align-items: center;
   padding: 10px 10px;
@@ -45,33 +48,27 @@ nav ul li a:hover {
   color: #2bbef9;
 }
 
-/* header .logo{
-  position: relative;
-  right: 4.8rem;
-} */
-
-header .part3{
+header .part3 {
   align-items: center;
   justify-content: center;
   min-width: 90px;
   height: 45px;
-  width: 10rem;
+  width: 30%;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #fff;
   outline: none;
 }
 
-header .part3 svg{
+header .part3 svg {
   font-size: 20px;
+  font-weight: 700;
 }
 
-header .search-box input{
+header .search-box input {
   display: none;
-  /* background: transparent; */
   outline: none;
   font-size: 15px;
-  /* color: rgba(0, 0, 0, 0.8); */
   width: 100%;
   height: 40px;
   border: 0px;
@@ -79,16 +76,11 @@ header .search-box input{
 }
 
 
-.part3 .bag{
+.part3 .bag {
   position: relative;
 }
 
-/* .part3{
-  position: relative;
-  right: 5rem;
-} */
- 
-.part3 .count{
+.part3 .count {
   position: absolute;
   text-align: center;
   top: -6px;
@@ -100,7 +92,69 @@ header .search-box input{
   color: #000;
   font-size: 10px;
   font-weight: 600;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+  cursor: pointer;
+}
+
+.srch-input {
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+}
+
+.nav-toggle {
+  display: none;
+  color: #ba46e4;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-close-btn {
+  display: none;
+  color: #ba46e4;
+  font-size: 1.7rem;
+} 
+
+@media (max-width: 956px) {
+  .nav {
+    position: fixed;
+    right: -40vw;
+    top: 0px;
+    width: 40vw;
+    background-color: #505251;
+    min-height: 100vh;
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav.active {
+    right: 0vw;
+  }
+
+  .nav .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px !important;
+    padding: 5rem 0rem !important;
+  }
+
+  .nav .list a{
+    font-size: 0.8rem
+  }
+
+  .nav-toggle {
+    display: block;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 99;
+  }
+
+  .nav-close-btn {
+    display: block;
+    position: absolute;
+    top: 2%;
+    left: 8%;
+  }
 }

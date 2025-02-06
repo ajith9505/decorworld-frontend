@@ -1,32 +1,40 @@
-import React from 'react'
-import './Cart.css'
+import './Cart.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart } from './cartSlice';
 
 const Cart = () => {
+    const cartItems = useSelector(state => state.cart.data);
+    const dispatch = useDispatch();
+
+    const handleRemove = (id) => {
+       dispatch(removeFromCart({id: id}));
+    }
+
+    if(!cartItems.length) return <div style={{minHeight:'60vh', width:'100%', textAlign:'center', alignContent:'center'}}>cart is empty</div>
     return (
         <>
             <div className="cart-container">
                 <div className="container">
                     <div className="heading">Cart</div>
                     <div className="row">
-                        <div className="col">
-                            <div className="table-header">
-                                <div className="table-content-1"></div>
-                                <div className="table-content-2">Product</div>
-                                <div className="table-content-3">Price</div>
-                                <div className="table-content-4">Quantity</div>
-                                <div className="table-content-5">Subtotal</div>
-                            </div>
-
-                            <div className="table-content">
-                                <div className="product-img">
-                                    <img src="https://www.shoppershaven.com.au/cdn/shop/files/DeepPurpleFloral4-1.jpg?v=1721994399&width=516" alt="loding" width='70px' height='85px' />
+                        {
+                            cartItems?.map((ele, index) => (
+                                <div className="col-12 col-md-6 d-sm-flex p-5 align-items-start justify-content-center" key={index}>
+                                    <div className="product-img me-5 mb-3">
+                                        <img src={ele.img} alt="Product" width='140px' height='170px' />
+                                    </div>
+                                    <div className='d-flex gap-2 flex-column'>
+                                        <div className="cart-product fw-bold">{ele.productName}</div>
+                                        <div className="price">Price: {ele.price} Rs</div>
+                                        <div className="quantity">Quantity: {ele.qty}</div>
+                                        <div className="product-subtotal">Sub Total: {ele.qty * ele.price} Rs</div>
+                                        <div>
+                                            <button className='cart-remove-btn w-20' onClick={() => handleRemove(ele.id)}>Remove</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="cart-product">Deep Purple Floral Digital Art Print</div>
-                                <div className="price">$149.99</div>
-                                <div className="quatity">1</div>
-                                <div className="product-subtotal">$149.99</div>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
                     <div className="cart-total">
                         <div className="cart-total-container">
@@ -35,12 +43,20 @@ const Cart = () => {
                             </div>
                             <div className="sub-total d-flex justify-content-between my-3">
                                 <div>Subtotal</div>
-                                <div>$149.99</div>
+                                <div>
+                                    {cartItems ? cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
+                                        return current + acc
+                                    }, 0) : 0} Rs
                                 </div>
-                                <div className="total d-flex justify-content-between my-3">
-                                    <div>Total</div>
-                                    <div>$149.99</div>
+                            </div>
+                            <div className="total d-flex justify-content-between my-3">
+                                <div className='fw-bold'>Total</div>
+                                <div className='fw-bold text-success'>
+                                    {cartItems ? cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
+                                        return current + acc
+                                    }, 0) : 0} Rs
                                 </div>
+                            </div>
                             <div className="checkout-btn mt-4">
                                 <button>PROCEED TO CHECKOUT</button>
                             </div>

@@ -3,7 +3,7 @@ import './Shop.css'
 import Product from './Product'
 import { Link } from 'react-router-dom'
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import Loading from '../Loading/Loading'
+import Loader from '../Loader';
 import { useGetAllProductsQuery } from '../../api/productApiSlice'
 import { FaBars } from 'react-icons/fa'
  
@@ -11,7 +11,7 @@ const Shop = () => {
 
   const { data: products, isLoading } = useGetAllProductsQuery();
 
-  if (isLoading) return <Loading />
+  if (isLoading) return <Loader />
 
   return (
     <>

@@ -1,15 +1,31 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from '../../api/productApiSlice';
 import './Products.css'
 import ImageSlide from './ImageSlide';
+import Loading from '../Loading/Loading';
 
 const Products = () => {
   const { id } = useParams();
   const { data: product, isLoading, refetch, error } = useGetProductByIdQuery(id);
+  console.log(product)
 
-  if (isLoading) return <div>Loading...</div>
+  const dispatch = useDispatch();
+
+  const cart = useSelector(state => {
+    console.log(state.cart);
+    state.cart.data;
+  })
+  if (isLoading) return <Loading />
+
+  const addCart = () => {
+    dispatch(setCart(prev => ({ ...prev, product })));
+  }
+
+  useEffect(() => {
+    console.log(cart)
+  }, [cartItems])
 
   return (
     <>
@@ -53,7 +69,7 @@ const Products = () => {
                 </div>
               </div>
               <div className="cart-section">
-                <span><button className="cart-btn">Add to cart</button></span>
+                <span><button className="cart-btn" onClick={addCart}>Add to cart</button></span>
               </div>
             </div>
           </div>

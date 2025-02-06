@@ -3,38 +3,18 @@
     padding: 20px 0px;
 }
 
-.table-header div, .table-content div{
-    width: 20%;
-    padding: 0px 20px;
-    align-content: center;
-}
-
-.table-content .cart-product{
-    overflow: hidden;
-    text-align: start;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 .heading{
     font-size: 2rem;
     margin-top: 20px;
-    font-weight: 600;
+    font-weight: 800;
     font-family: 'Cormorant Garamond', serif;
 }
 
 .cart-total{
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin: 20px 0px;
-}
-
-.cart-total-container{
-    width: 40%;
-    height: 15rem;
-    border: 1px solid #000;
-    padding: 20px;
 }
 
 .total-heading h2{
@@ -50,5 +30,19 @@
 .checkout-btn button{
     padding: 15px 30px;
     border-radius: 7px;
-    background-color: gray;
+    outline-color: rgb(25, 123, 81);
+    background-color: rgb(9, 251, 194);
+    font-weight: 600;
+}
+
+.checkout-btn button:hover{
+    background-color: rgb(6, 180, 111);
+}
+
+.cart-remove-btn {
+    border: none;
+    background-color: rgb(228, 83, 83);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: aliceblue;
 }
