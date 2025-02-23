@@ -10,21 +10,22 @@ const cartSlice = createSlice({
                 if (!existingItem) {
                     state.data.push(action.payload.data);
                 }
-                else{
-                    if(existingItem.qty<5) existingItem.qty++
+                else {
+                    if (existingItem.qty < 5) existingItem.qty++
                 }
             }
             else {
                 state.data = [action.payload.data]
             }
         },
-        removeFromCart: (state, action) =>{
-            console.log(action.payload);
-            
-            state.data = state.data.filter(ele => action.payload.id !== ele.id)
+        removeFromCart: (state, action) => {
+            state.data = state.data.filter(ele => action.payload.id !== ele.id);
+        },
+        emptyCart: (state, action) => {
+            state.data = [];
         }
     }
 })
 
-export const { addToCart, removeFromCart } = cartSlice.actions
+export const { addToCart, removeFromCart, emptyCart } = cartSlice.actions
 export default cartSlice.reducer

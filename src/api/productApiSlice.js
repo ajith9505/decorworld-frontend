@@ -21,8 +21,6 @@ export const productApiSlice = apiSlice.injectEndpoints({
                 keepUnsedDataFor: 5
             })
         })
-
-
     })
 })
 

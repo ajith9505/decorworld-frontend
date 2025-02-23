@@ -17,3 +17,6 @@ export const apiSlice = createApi({
     tagTypes: ["Product", "Order", "User", "Category"],
     endpoints: () => ({}),
   });
+
+  // 'https://decorworld-api.onrender.com'
+  // http://localhost:3500

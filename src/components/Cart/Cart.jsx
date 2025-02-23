@@ -1,16 +1,76 @@
 import './Cart.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from './cartSlice';
+import { removeFromCart, emptyCart } from './cartSlice';
+import { useOrderMutation, useConfirmOrderMutation, useGetOrdersQuery } from '../../api/paymentApiSlice';
 
 const Cart = () => {
+    const { user } = useSelector(state => state.auth);
     const cartItems = useSelector(state => state.cart.data);
     const dispatch = useDispatch();
+    const [order] = useOrderMutation();    
 
+    const cartTotal = cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
+        return current + acc
+    }, 0);
+    
     const handleRemove = (id) => {
-       dispatch(removeFromCart({id: id}));
+        dispatch(removeFromCart({ id: id }));
     }
 
-    if(!cartItems.length) return <div style={{minHeight:'60vh', width:'100%', textAlign:'center', alignContent:'center'}}>cart is empty</div>
+    const paymentHandler = async (e) => {
+        e.preventDefault();
+        try {
+            const body = {
+                amount: `${cartTotal * 100}`,
+                currency: 'INR',
+                receipt: 'receiptID'
+            }
+            const response = await order(body);
+
+            const options = {
+                key: "rzp_test_fANlv3LvQdbAx2",
+                amount: `${cartTotal * 100}`,
+                currency: "INR",
+                name: "Decor World",
+                description: "Test Transaction",
+                order_id: response.data.id,
+                handler: async function (paymentResponse) {
+                    const body = {
+                        ...paymentResponse, products: cartItems
+                    };
+
+                    try {
+                        await confirmOrder(body)
+                        dispatch(emptyCart());
+                    } catch (validateError) {
+                        console.error("Validation Error:", validateError);
+                    }
+                },
+                prefill: {
+                    name: user.name,
+                    email: user.email,
+                    contact: "9000090000",
+                },
+                notes: {
+                    address: "Razorpay Corporate Office",
+                },
+                theme: {
+                    color: "#3399cc",
+                }
+            };
+
+            const rzp1 = new window.Razorpay(options);
+            rzp1.on("payment.failed", function (errorResponse) {
+                alert(errorResponse.error.code);
+            });
+            rzp1.open();
+        } catch (error) {
+            console.error("Order Creation Error:", error);
+        }
+    };
+
+
+    if (!cartItems.length) return <div style={{ minHeight: '60vh', width: '100%', textAlign: 'center', alignContent: 'center' }}>cart is empty</div>
     return (
         <>
             <div className="cart-container">
@@ -44,21 +104,17 @@ const Cart = () => {
                             <div className="sub-total d-flex justify-content-between my-3">
                                 <div>Subtotal</div>
                                 <div>
-                                    {cartItems ? cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
-                                        return current + acc
-                                    }, 0) : 0} Rs
+                                    {cartTotal ? cartTotal : 0} Rs Rs
                                 </div>
                             </div>
                             <div className="total d-flex justify-content-between my-3">
                                 <div className='fw-bold'>Total</div>
                                 <div className='fw-bold text-success'>
-                                    {cartItems ? cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
-                                        return current + acc
-                                    }, 0) : 0} Rs
+                                    {cartTotal ? cartTotal : 0} Rs
                                 </div>
                             </div>
                             <div className="checkout-btn mt-4">
-                                <button>PROCEED TO CHECKOUT</button>
+                                <button onClick={paymentHandler}>PROCEED TO CHECKOUT</button>
                             </div>
                         </div>
                     </div>
