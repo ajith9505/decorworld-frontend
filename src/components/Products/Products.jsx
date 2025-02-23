@@ -2,33 +2,29 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useGetProductByIdQuery } from '../../api/productApiSlice';
+import { addToCart } from '../Cart/cartSlice';
 import './Products.css'
 import ImageSlide from './ImageSlide';
-import Loading from '../Loading/Loading';
+import Loader from '../Loader';
 
 const Products = () => {
   const { id } = useParams();
-  const { data: product, isLoading, refetch, error } = useGetProductByIdQuery(id);
-  console.log(product)
+  const { data: product, isLoading } = useGetProductByIdQuery(id);
 
   const dispatch = useDispatch();
 
   const cart = useSelector(state => {
-    console.log(state.cart);
     state.cart.data;
   })
-  if (isLoading) return <Loading />
+  if (isLoading) return <Loader />
 
   const addCart = () => {
-    dispatch(setCart(prev => ({ ...prev, product })));
-  }
+          dispatch(addToCart( { data : { id: id, productName: product.name, price: product.price, img: product?.image, qty:1  }}));        
+      }
 
-  useEffect(() => {
-    console.log(cart)
-  }, [cartItems])
 
   return (
-    <>
+    <> 
       <div className="product-container py-5">
         <div className="container">
           <div className='img'>
@@ -63,9 +59,9 @@ const Products = () => {
                   <span>Quantity</span>
                 </div>
                 <div className="qty-btn">
-                  <span><button className='dec-btn'>-</button></span>
+                  {/* <span><button className='dec-btn'>-</button></span> */}
                   <span className='qty-num'>1</span>
-                  <span><button className='inc-btn'>+</button></span>
+                  {/* <span><button className='inc-btn'>+</button></span> */}
                 </div>
               </div>
               <div className="cart-section">

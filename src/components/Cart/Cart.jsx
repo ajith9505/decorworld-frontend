@@ -7,7 +7,8 @@ const Cart = () => {
     const { user } = useSelector(state => state.auth);
     const cartItems = useSelector(state => state.cart.data);
     const dispatch = useDispatch();
-    const [order] = useOrderMutation();    
+    const [order] = useOrderMutation();   
+    const [confirmOrder] = useConfirmOrderMutation(); 
 
     const cartTotal = cartItems?.map(ele => ele.qty * ele.price).reduce((acc, current) => {
         return current + acc

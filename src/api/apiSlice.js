@@ -18,5 +18,5 @@ export const apiSlice = createApi({
     endpoints: () => ({}),
   });
 
-  // 'https://decorworld-api.onrender.com'
+  // https://decorworld-api.onrender.com
   // http://localhost:3500

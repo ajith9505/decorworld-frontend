@@ -20,7 +20,7 @@ import UserList from './pages/Admin/UserList'
 import AdminDashboard from './pages/Admin/AdminDashboard'
 import ProductPage from './pages/Admin/ProductPage'
 import ProductList from './pages/Admin/ProductList'
-
+import Order from './components/Order/Order'
 
 function App() {
 
@@ -46,6 +46,7 @@ function App() {
 
           <Route element={<RequireAuth />}>
             <Route path='/profile' element={<UpdateProfile />} />
+            <Route path='/orders' element={<Order />} />
           </Route>
 
           {/* admin routes */}

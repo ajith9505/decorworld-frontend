@@ -15,9 +15,8 @@ const Layout = () => {
             <ToastContainer />
             <div className="main">
                 <div className="d-flex">
-                    <div className="d-flex flex-column w-100">
+                    <div className="d-flex flex-column  w-100">
                         <Header />
-                        <SearchBox />
                         <Outlet />
                     </div>
                 </div>
