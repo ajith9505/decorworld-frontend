@@ -54,7 +54,7 @@ const Navigation = ( {showSidebar} ) => {
             </div>
             <div className="d-flex flex-column justify-content-center gap-3">
                 <Link
-                    to="/"
+                    to="/admin/dashboard"
                     className="nav-link d-flex align-items-center"
                 >
                     <div>
@@ -63,33 +63,33 @@ const Navigation = ( {showSidebar} ) => {
                     <span className="hidden nav-item-name mt-3">Home</span>{" "}
                 </Link>
                 <Link
-                    to="/shop"
+                    to="/admin/productlist"
                     className="nav-link d-flex align-items-center"
                 >
                     <div>
                         <AiOutlineShopping className="me-2 mt-3" />
                     </div>
                     <div>
-                        <span className="hidden nav-item-name mt-3">Shop</span>{" "}
+                        <span className="hidden nav-item-name mt-3">Products</span>{" "}
                     </div>
                 </Link>
                 <Link
-                    to="/"
+                    to="/admin/userlist"
                     className="nav-link d-flex align-items-center"
                 >
                     <div>
                         <AiOutlineShoppingCart className="me-2 mt-3" />
                     </div>
-                    <span className="hidden nav-item-name mt-3">Cart</span>{" "}
+                    <span className="hidden nav-item-name mt-3">Users</span>{" "}
                 </Link>
                 <Link
-                    to="/"
+                    to="/admin/orders"
                     className="nav-link d-flex align-items-center"
                 >
                     <div>
                         <FaHeart className="me-2 mt-3" />
                     </div>
-                    <span className="hidden nav-item-name mt-3">Favorites</span>{" "}
+                    <span className="hidden nav-item-name mt-3">Orders</span>{" "}
                 </Link>
             </div>
 

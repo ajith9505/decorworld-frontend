@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Navbar = ({ showSidebar, setShowSidebar }) => {
 
-    const user = useSelector(state => state.auth.user.id)
+    const user = useSelector(state => state?.auth?.user?.id)
 
     return (
         <>

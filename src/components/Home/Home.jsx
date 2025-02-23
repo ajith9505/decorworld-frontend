@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.css'
 import Product from '../Shop/Product'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaLock } from "react-icons/fa6";
 import { FaTruckFast } from "react-icons/fa6";
 import { TbReload } from "react-icons/tb";
 import { RiMapPin2Line } from "react-icons/ri";
-import CartPopup from './CartPopup';
+// import CartPopup from './CartPopup';
 import { useGetAllProductsQuery } from '../../api/productApiSlice';
 import Loader from '../Loader';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 
+  const navigateTo = useNavigate();
   const { data, isLoading } = useGetAllProductsQuery();
   const homeProducts = data;
+
+  const user = useSelector(state => state?.auth?.user);
+
+  useEffect(() => {
+    if (user?.isAdmin) navigateTo('/admin/dashboard')
+  }, [])
 
   return (
     <>
